@@ -30,3 +30,10 @@ pnpm dev
 - `pnpm test:coverage`: run coverage
 - `pnpm lint`: lint workspace
 >>>>>>> dd8beb9 (feat: init xx-ui monorepo with components,tests,docs ans ci)
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
+
+## License
+
+[MIT](./LICENSE)
