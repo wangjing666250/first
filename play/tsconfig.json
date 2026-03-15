@@ -1,0 +1,37 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@xx-ui/pillar-ui": [
+        "../packages/pillar-ui/src/index.ts"
+      ],
+      "@xx-ui/pillar-ui/button": [
+        "../packages/pillar-ui/src/components/button/index.ts"
+      ],
+      "@xx-ui/pillar-ui/input": [
+        "../packages/pillar-ui/src/components/input/index.ts"
+      ],
+      "@xx-ui/pillar-ui/autocomplete": [
+        "../packages/pillar-ui/src/components/autocomplete/index.ts"
+      ],
+      "@xx-ui/pillar-ui/upload": [
+        "../packages/pillar-ui/src/components/upload/index.ts"
+      ],
+      "@xx-ui/pillar-ui/message": [
+        "../packages/pillar-ui/src/components/message/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "vite.config.ts",
+    "../packages/pillar-ui/env.d.ts",
+    "../packages/pillar-ui/src/**/*.ts",
+    "../packages/pillar-ui/src/**/*.d.ts",
+    "../packages/pillar-ui/src/**/*.vue"
+  ]
+}

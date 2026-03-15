@@ -1,0 +1,16 @@
+{
+  "name": "@xx-ui/theme",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "node ./scripts/build-theme.mjs",
+    "lint": "echo \"skip lint for theme css\"",
+    "typecheck": "echo \"skip\""
+  }
+}

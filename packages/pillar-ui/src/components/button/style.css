@@ -1,0 +1,96 @@
+.xx-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--xx-color-border);
+  border-radius: var(--xx-radius-sm);
+  background: var(--xx-color-bg);
+  color: var(--xx-color-text);
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.xx-button:hover {
+  border-color: var(--xx-color-primary);
+  color: var(--xx-color-primary);
+}
+
+.xx-button.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.xx-button--primary {
+  border-color: var(--xx-color-primary);
+  background: var(--xx-color-primary);
+  color: #fff;
+}
+
+.xx-button--primary:hover {
+  background: var(--xx-color-primary-hover);
+  color: #fff;
+}
+
+.xx-button--danger {
+  border-color: var(--xx-color-danger);
+  background: var(--xx-color-danger);
+  color: #fff;
+}
+
+.xx-button--small {
+  padding: 6px 10px;
+  font-size: var(--xx-font-size-sm);
+}
+
+.xx-button--medium {
+  padding: 8px 14px;
+  font-size: var(--xx-font-size-md);
+}
+
+.xx-button--large {
+  padding: 10px 18px;
+  font-size: var(--xx-font-size-lg);
+}
+
+.xx-button.is-plain {
+  background: #fff;
+}
+
+.xx-button--primary.is-plain {
+  color: var(--xx-color-primary);
+  background: rgb(64 158 255 / 10%);
+}
+
+.xx-button--danger.is-plain {
+  color: var(--xx-color-danger);
+  background: rgb(245 108 108 / 10%);
+}
+
+.xx-button.is-round {
+  border-radius: 999px;
+}
+
+.xx-button.is-circle {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.xx-button__loading {
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: xx-button-spin 0.8s linear infinite;
+}
+
+@keyframes xx-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,46 @@
+.xx-upload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xx-space-sm);
+}
+
+.xx-upload__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px dashed var(--xx-color-primary);
+  border-radius: var(--xx-radius-sm);
+  color: var(--xx-color-primary);
+  cursor: pointer;
+}
+
+.xx-upload__input {
+  display: none;
+}
+
+.xx-upload__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xx-upload__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: var(--xx-font-size-sm);
+}
+
+.is-success {
+  color: #67c23a;
+}
+
+.is-error {
+  color: var(--xx-color-danger);
+}
+
+.is-rejected {
+  color: #e6a23c;
+}
