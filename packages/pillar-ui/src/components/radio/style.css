@@ -1,0 +1,11 @@
+.xx-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.xx-radio.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
