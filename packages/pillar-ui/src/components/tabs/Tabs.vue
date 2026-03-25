@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TabItem } from './types';
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: string;
     items?: TabItem[];
@@ -27,7 +27,7 @@ function onSelect(item: TabItem): void {
 <template>
   <div class="xx-tabs">
     <button
-      v-for="item in props.items"
+      v-for="item in items"
       :key="item.value"
       class="xx-tabs__tab"
       :class="{ 'is-active': modelValue === item.value, 'is-disabled': item.disabled }"

@@ -27,7 +27,7 @@ function onChange(): void {
   <label class="xx-radio" :class="{ 'is-disabled': disabled }">
     <input
       type="radio"
-      :checked="props.modelValue === props.value"
+      :checked="modelValue === value"
       :disabled="disabled"
       @change="onChange"
     />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { MenuItem } from './types';
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     active?: string;
     items?: MenuItem[];

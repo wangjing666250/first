@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DropdownOption } from './types';
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: string;
     options?: DropdownOption[];

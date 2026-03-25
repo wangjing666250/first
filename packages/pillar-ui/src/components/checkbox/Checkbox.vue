@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: boolean;
     disabled?: boolean;
@@ -24,7 +24,7 @@ function onChange(event: Event): void {
 
 <template>
   <label class="xx-checkbox" :class="{ 'is-disabled': disabled }">
-    <input type="checkbox" :checked="props.modelValue" :disabled="disabled" @change="onChange" />
+    <input type="checkbox" :checked="modelValue" :disabled="disabled" @change="onChange" />
     <span><slot /></span>
   </label>
 </template>

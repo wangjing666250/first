@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NotificationItem } from './types';
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     list?: NotificationItem[];
   }>(),

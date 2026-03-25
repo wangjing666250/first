@@ -4,7 +4,7 @@ export interface SelectOption {
   value: string;
 }
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: string;
     options?: SelectOption[];
@@ -34,7 +34,7 @@ function onChange(event: Event): void {
 <template>
   <select class="xx-select" :value="modelValue" :disabled="disabled" @change="onChange">
     <option value="" disabled>{{ placeholder }}</option>
-    <option v-for="item in props.options" :key="item.value" :value="item.value">
+    <option v-for="item in options" :key="item.value" :value="item.value">
       {{ item.label }}
     </option>
   </select>
