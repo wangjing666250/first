@@ -77,7 +77,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm --filter @pillar-ui/play preview
+      # Playwright starts the play app via webServer (playwright.config.ts). Do not run
+      # `vite preview` here: it requires play/dist and this job does not build @pillar-ui/play.
       - run: pnpm test:e2e
       - name: Upload Playwright report
         if: always()

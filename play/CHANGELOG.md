@@ -1,5 +1,16 @@
 # @pillar-ui/play
 
+## 1.0.0
+
+### Major Changes
+
+- 123
+
+### Patch Changes
+
+- Updated dependencies
+  - @pillar-ui/pillar-ui@2.0.0
+
 ## 0.0.4
 
 ### Patch Changes
