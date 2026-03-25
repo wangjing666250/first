@@ -1,0 +1,25 @@
+.xx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--xx-font-size-md);
+}
+
+.xx-table th,
+.xx-table td {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.xx-table.is-bordered th,
+.xx-table.is-bordered td {
+  border: 1px solid #ebeef5;
+}
+
+.xx-table thead th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.xx-table.is-striped tbody tr:nth-child(odd) {
+  background: #fafcff;
+}

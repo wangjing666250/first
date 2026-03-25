@@ -1,0 +1,11 @@
+.xx-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.xx-checkbox.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
