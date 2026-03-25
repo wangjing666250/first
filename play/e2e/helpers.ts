@@ -3,8 +3,8 @@ import { expect } from '@playwright/test';
 
 export async function openComponent(page: Page, navLabel: RegExp): Promise<void> {
   await page.goto('/');
-  await page.getByRole('button', { name: navLabel, exact: true }).click();
-  await page.waitForLoadState('networkidle');
+  await page.getByRole('button', { name: navLabel }).click();
+  await page.waitForLoadState('load');
 }
 
 export async function locateCustomSection(page: Page): Promise<Locator> {
