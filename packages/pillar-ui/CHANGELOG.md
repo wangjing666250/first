@@ -1,5 +1,11 @@
 # @pillar-ui/pillar-ui
 
+## 1.0.0
+
+### Major Changes
+
+- 123
+
 ## 0.0.3
 
 ### Patch Changes
