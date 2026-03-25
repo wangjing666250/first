@@ -1,5 +1,7 @@
 import type { Locator, Page, TestInfo } from '@playwright/test';
 import { expect } from '@playwright/test';
+import { existsSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 
 export async function openComponent(page: Page, navLabel: RegExp): Promise<void> {
   await page.goto('/');
@@ -15,8 +17,8 @@ export async function locateCustomSection(page: Page): Promise<Locator> {
 
 export async function expectScreenshotWithBootstrap(section: Locator, testInfo: TestInfo, snapshotName: string): Promise<void> {
   const snapshotPath = testInfo.snapshotPath(snapshotName);
-  if (!require('node:fs').existsSync(snapshotPath)) {
-    require('node:fs').mkdirSync(require('node:path').dirname(snapshotPath), { recursive: true });
+  if (!existsSync(snapshotPath)) {
+    mkdirSync(dirname(snapshotPath), { recursive: true });
     await section.screenshot({ path: snapshotPath });
     testInfo.annotations.push({ type: 'snapshot-bootstrap', description: snapshotPath });
     return;
