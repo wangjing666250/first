@@ -1,4 +1,4 @@
-# XX-UI Interview Drills
+# Pillar UI Interview Drills
 
 ## Chapter 1: Monorepo and pnpm
 

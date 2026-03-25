@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# first
-simple code
-=======
-# XX-UI (Pillar-UI)
+# Pillar UI
 
 A Vue 3 + TypeScript component library monorepo for admin products.
 
@@ -29,7 +25,6 @@ pnpm dev
 - `pnpm test`: run component tests
 - `pnpm test:coverage`: run coverage
 - `pnpm lint`: lint workspace
->>>>>>> dd8beb9 (feat: init xx-ui monorepo with components,tests,docs ans ci)
 ## Contributing
 
 Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.

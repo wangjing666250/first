@@ -1,0 +1,25 @@
+.xx-pagination {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.xx-pagination__btn {
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.xx-pagination__btn.is-active {
+  color: #fff;
+  border-color: var(--xx-color-primary);
+  background: var(--xx-color-primary);
+}
+
+.xx-pagination__btn:disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+}

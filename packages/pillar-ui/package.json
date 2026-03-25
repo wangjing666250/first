@@ -1,6 +1,6 @@
 {
-  "name": "@xx-ui/pillar-ui",
-  "version": "0.0.2",
+  "name": "@pillar-ui/pillar-ui",
+  "version": "0.0.3",
   "private": false,
   "type": "module",
   "main": "./dist/index.cjs",
@@ -23,6 +23,50 @@
       "types": "./dist/input.d.ts",
       "import": "./dist/input.js"
     },
+    "./textarea": {
+      "types": "./dist/textarea.d.ts",
+      "import": "./dist/textarea.js"
+    },
+    "./space": {
+      "types": "./dist/space.d.ts",
+      "import": "./dist/space.js"
+    },
+    "./color": {
+      "types": "./dist/color.d.ts",
+      "import": "./dist/color.js"
+    },
+    "./icon": {
+      "types": "./dist/icon.d.ts",
+      "import": "./dist/icon.js"
+    },
+    "./select": {
+      "types": "./dist/select.d.ts",
+      "import": "./dist/select.js"
+    },
+    "./dropdown": {
+      "types": "./dist/dropdown.d.ts",
+      "import": "./dist/dropdown.js"
+    },
+    "./date-picker": {
+      "types": "./dist/date-picker.d.ts",
+      "import": "./dist/date-picker.js"
+    },
+    "./form-pro": {
+      "types": "./dist/form-pro.d.ts",
+      "import": "./dist/form-pro.js"
+    },
+    "./checkbox": {
+      "types": "./dist/checkbox.d.ts",
+      "import": "./dist/checkbox.js"
+    },
+    "./radio": {
+      "types": "./dist/radio.d.ts",
+      "import": "./dist/radio.js"
+    },
+    "./switch": {
+      "types": "./dist/switch.d.ts",
+      "import": "./dist/switch.js"
+    },
     "./autocomplete": {
       "types": "./dist/autocomplete.d.ts",
       "import": "./dist/autocomplete.js"
@@ -31,9 +75,61 @@
       "types": "./dist/upload.d.ts",
       "import": "./dist/upload.js"
     },
+    "./badge": {
+      "types": "./dist/badge.d.ts",
+      "import": "./dist/badge.js"
+    },
     "./message": {
       "types": "./dist/message.d.ts",
       "import": "./dist/message.js"
+    },
+    "./modal": {
+      "types": "./dist/modal.d.ts",
+      "import": "./dist/modal.js"
+    },
+    "./confirm": {
+      "types": "./dist/confirm.d.ts",
+      "import": "./dist/confirm.js"
+    },
+    "./popover": {
+      "types": "./dist/popover.d.ts",
+      "import": "./dist/popover.js"
+    },
+    "./notification": {
+      "types": "./dist/notification.d.ts",
+      "import": "./dist/notification.js"
+    },
+    "./loading": {
+      "types": "./dist/loading.d.ts",
+      "import": "./dist/loading.js"
+    },
+    "./table": {
+      "types": "./dist/table.d.ts",
+      "import": "./dist/table.js"
+    },
+    "./tree": {
+      "types": "./dist/tree.d.ts",
+      "import": "./dist/tree.js"
+    },
+    "./menu": {
+      "types": "./dist/menu.d.ts",
+      "import": "./dist/menu.js"
+    },
+    "./progress": {
+      "types": "./dist/progress.d.ts",
+      "import": "./dist/progress.js"
+    },
+    "./tabs": {
+      "types": "./dist/tabs.d.ts",
+      "import": "./dist/tabs.js"
+    },
+    "./pagination": {
+      "types": "./dist/pagination.d.ts",
+      "import": "./dist/pagination.js"
+    },
+    "./drawer": {
+      "types": "./dist/drawer.d.ts",
+      "import": "./dist/drawer.js"
     },
     "./style.css": "./dist/pillar-ui.css"
   },
@@ -44,9 +140,12 @@
     "vue": "^3.5.0"
   },
   "dependencies": {
-    "@xx-ui/theme": "workspace:*"
+    "@pillar-ui/theme": "workspace:*"
   },
   "scripts": {
+    "build": "vite build",
+    "lint": "eslint ./src --ext .ts,.vue",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit",
     "test": "vitest -c ../../vitest.config.ts",
     "test:run": "vitest run -c ../../vitest.config.ts",
     "test:coverage": "vitest run -c ../../vitest.config.ts --coverage"

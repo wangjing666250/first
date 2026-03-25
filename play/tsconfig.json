@@ -6,23 +6,50 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@xx-ui/pillar-ui": [
+      "@pillar-ui/pillar-ui": [
         "../packages/pillar-ui/src/index.ts"
       ],
-      "@xx-ui/pillar-ui/button": [
+      "@pillar-ui/pillar-ui/button": [
         "../packages/pillar-ui/src/components/button/index.ts"
       ],
-      "@xx-ui/pillar-ui/input": [
+      "@pillar-ui/pillar-ui/input": [
         "../packages/pillar-ui/src/components/input/index.ts"
       ],
-      "@xx-ui/pillar-ui/autocomplete": [
+      "@pillar-ui/pillar-ui/select": [
+        "../packages/pillar-ui/src/components/select/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/checkbox": [
+        "../packages/pillar-ui/src/components/checkbox/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/radio": [
+        "../packages/pillar-ui/src/components/radio/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/switch": [
+        "../packages/pillar-ui/src/components/switch/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/autocomplete": [
         "../packages/pillar-ui/src/components/autocomplete/index.ts"
       ],
-      "@xx-ui/pillar-ui/upload": [
+      "@pillar-ui/pillar-ui/upload": [
         "../packages/pillar-ui/src/components/upload/index.ts"
       ],
-      "@xx-ui/pillar-ui/message": [
+      "@pillar-ui/pillar-ui/message": [
         "../packages/pillar-ui/src/components/message/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/modal": [
+        "../packages/pillar-ui/src/components/modal/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/table": [
+        "../packages/pillar-ui/src/components/table/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/tabs": [
+        "../packages/pillar-ui/src/components/tabs/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/pagination": [
+        "../packages/pillar-ui/src/components/pagination/index.ts"
+      ],
+      "@pillar-ui/pillar-ui/drawer": [
+        "../packages/pillar-ui/src/components/drawer/index.ts"
       ]
     }
   },
