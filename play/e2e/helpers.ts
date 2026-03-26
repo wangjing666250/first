@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 export async function openComponent(page: Page, navLabel: RegExp): Promise<void> {
   await page.goto('/');
   await page.getByRole('button', { name: navLabel }).click();
-  await page.waitForLoadState('load');
+  await page.waitForLoadState('networkidle');
 }
 
 export async function locateCustomSection(page: Page): Promise<Locator> {
@@ -33,6 +33,9 @@ export async function expectScreenshotWithBootstrap(section: Locator, testInfo: 
 
   if (!existsSync(baselinePath)) {
     mkdirSync(baselineDir, { recursive: true });
+    await section.scrollIntoViewIfNeeded();
+    await section.waitFor({ state: 'stable' });
+    await section.waitFor({ state: 'visible' });
     await section.screenshot({ path: baselinePath });
     testInfo.annotations.push({ type: 'snapshot-bootstrap', description: baselinePath });
     return;
