@@ -84,11 +84,15 @@ jobs:
             mv "$f" "${f%-chromium-win32.png}-chromium.png"
           done
           if [ -n "$(git status --porcelain)" ]; then
+            branch="${GITHUB_REF_NAME:-$(git rev-parse --abbrev-ref HEAD)}"
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
             git commit -m "chore(e2e): rename baselines to -chromium.png (platform-neutral)"
-            git push
+            # Push to the branch that triggered this workflow (works for both PR and direct push)
+            git push "origin HEAD:$branch" 2>/dev/null || \
+              git push "origin HEAD:${branch##*/}" 2>/dev/null || \
+              echo "Skip push (no write permission or already on branch)"
           fi
       - run: pnpm test:e2e
       - name: Upload Playwright report
