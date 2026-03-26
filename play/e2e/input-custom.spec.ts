@@ -1,11 +1,10 @@
 import { test } from '@playwright/test';
-import { expectScreenshotWithBootstrap, locateCustomSection, openComponent } from './helpers';
+import { expectScreenshot, locateCustomSection, openComponent } from './helpers';
 
 test.describe('Input custom showcases', () => {
-  test('renders theme/color/slot custom sections', async ({ page }, testInfo) => {
+  test('renders theme/color/slot custom sections', async ({ page }) => {
     await openComponent(page, /Input 输入框/);
     const customSection = await locateCustomSection(page);
-    await expectScreenshotWithBootstrap(customSection, testInfo, 'input-custom-showcases.png');
+    await expectScreenshot(customSection, 'input-custom-showcases.png');
   });
 });
-
