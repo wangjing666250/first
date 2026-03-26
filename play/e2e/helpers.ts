@@ -1,7 +1,10 @@
 import type { Locator, Page, TestInfo } from '@playwright/test';
 import { expect } from '@playwright/test';
+import { createRequire } from 'node:module';
 import { existsSync, mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, join, extname } from 'node:path';
+
+const require = createRequire(import.meta.url);
 
 export async function openComponent(page: Page, navLabel: RegExp): Promise<void> {
   await page.goto('/');
@@ -16,11 +19,20 @@ export async function locateCustomSection(page: Page): Promise<Locator> {
 }
 
 export async function expectScreenshotWithBootstrap(section: Locator, testInfo: TestInfo, snapshotName: string): Promise<void> {
-  const snapshotPath = testInfo.snapshotPath(snapshotName);
-  if (!existsSync(snapshotPath)) {
-    mkdirSync(dirname(snapshotPath), { recursive: true });
-    await section.screenshot({ path: snapshotPath });
-    testInfo.annotations.push({ type: 'snapshot-bootstrap', description: snapshotPath });
+  // Build baseline path matching committed snapshots in
+  // {testDir}/{testFileName}-snapshots/{snapshotBase}-chromium-win32{ext}
+  const testDir = testInfo.project.testDir;
+  const testFile = testInfo.file;
+  const testFileName = testFile ? testFile.replace(/.*[/\\]/, '') : '';
+  const ext = extname(snapshotName);
+  const snapshotBase = snapshotName.replace(ext, '');
+  const baselineDir = join(testDir, `${testFileName}-snapshots`);
+  const baselinePath = join(baselineDir, `${snapshotBase}-chromium-win32${ext}`);
+
+  if (!existsSync(baselinePath)) {
+    mkdirSync(baselineDir, { recursive: true });
+    await section.screenshot({ path: baselinePath });
+    testInfo.annotations.push({ type: 'snapshot-bootstrap', description: baselinePath });
     return;
   }
   await expect(section).toHaveScreenshot(snapshotName);

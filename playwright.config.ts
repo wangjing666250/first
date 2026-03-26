@@ -7,12 +7,6 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   reporter: 'list',
-  // Match committed baselines (*-chromium-win32.png) on Linux CI and local Windows.
-  expect: {
-    toHaveScreenshot: {
-      pathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}-chromium-win32{ext}',
-    },
-  },
   use: {
     baseURL: 'http://127.0.0.1:4174',
     trace: 'on-first-retry',
