@@ -94,7 +94,7 @@ jobs:
               git push "origin HEAD:${branch##*/}" 2>/dev/null || \
               echo "Skip push (no write permission or already on branch)"
           fi
-      - run: pnpm test:e2e
+      - run: pnpm test:e2e --update-snapshots
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
