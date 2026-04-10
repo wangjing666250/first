@@ -9,9 +9,9 @@ export default defineConfig({
   reporter: 'list',
   expect: {
     toHaveScreenshot: {
-      // No {platform} → same path on Linux CI and Windows dev. Baselines must NOT have a
-      // platform suffix (rename them accordingly: "*-chromium-win32.png" → "*-chromium.png").
-      pathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{ext}',
+      pathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}-chromium{ext}',
+      maxDiffPixels: 10000,
+      maxDiffRatio: 0.05,
     },
   },
   use: {

@@ -15,8 +15,7 @@ export async function locateCustomSection(page: Page): Promise<Locator> {
 
 export async function expectScreenshot(section: Locator, snapshotName: string): Promise<void> {
   await section.scrollIntoViewIfNeeded();
-  const name = snapshotName.replace('.png', '-chromium.png');
-  await expect(section).toHaveScreenshot(name);
+  await expect(section).toHaveScreenshot(snapshotName);
 }
 
 export async function expectScreenshotWithBootstrap(
@@ -25,8 +24,7 @@ export async function expectScreenshotWithBootstrap(
   snapshotName: string
 ): Promise<void> {
   await section.scrollIntoViewIfNeeded();
-  const name = snapshotName.replace('.png', '-chromium.png');
-  await expect(section).toHaveScreenshot(name);
+  await expect(section).toHaveScreenshot(snapshotName);
   await testInfo.attach('screenshot', {
     body: await section.screenshot(),
     contentType: 'image/png',
