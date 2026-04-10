@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thanks for your interest in contributing to XX-UI.
+Thanks for your interest in contributing to Pillar UI.
 
 ## Development Setup
 

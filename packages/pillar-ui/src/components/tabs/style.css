@@ -1,0 +1,24 @@
+.xx-tabs {
+  display: inline-flex;
+  border-bottom: 1px solid #ebeef5;
+  gap: 2px;
+}
+
+.xx-tabs__tab {
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #606266;
+}
+
+.xx-tabs__tab.is-active {
+  color: var(--xx-color-primary);
+  border-bottom-color: var(--xx-color-primary);
+}
+
+.xx-tabs__tab.is-disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+}

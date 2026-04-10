@@ -1,0 +1,46 @@
+.xx-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+}
+
+.xx-drawer__mask {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 45%);
+}
+
+.xx-drawer__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 0 16px rgb(0 0 0 / 20%);
+}
+
+.xx-drawer__panel.is-right {
+  right: 0;
+}
+
+.xx-drawer__panel.is-left {
+  left: 0;
+}
+
+.xx-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.xx-drawer__close {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.xx-drawer__body {
+  padding: 16px;
+}

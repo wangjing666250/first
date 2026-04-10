@@ -96,6 +96,36 @@ function renderLabel(label: string): string {
   const reg = new RegExp(`(${escaped})`, "ig");
   return label.replace(reg, "<mark>$1</mark>");
 }
+
+interface HighlightPart {
+  text: string;
+  matched: boolean;
+}
+
+function splitLabelParts(label: string): HighlightPart[] {
+  if (!props.highlight || !keyword.value.trim()) {
+    return [{ text: label, matched: false }];
+  }
+
+  const highlighted = renderLabel(label);
+  const rawParts = highlighted.split(/(<mark>|<\/mark>)/g).filter(Boolean);
+  const parts: HighlightPart[] = [];
+  let matched = false;
+
+  for (const part of rawParts) {
+    if (part === "<mark>") {
+      matched = true;
+      continue;
+    }
+    if (part === "</mark>") {
+      matched = false;
+      continue;
+    }
+    parts.push({ text: part, matched });
+  }
+
+  return parts;
+}
 </script>
 
 <template>
@@ -118,7 +148,12 @@ function renderLabel(label: string): string {
           :class="['xx-autocomplete__item', { 'is-active': index === activeIndex }]"
           @mousedown.prevent="onSelect(option)"
         >
-          <span v-html="renderLabel(option.label)" />
+          <span>
+            <template v-for="(part, partIndex) in splitLabelParts(option.label)" :key="partIndex">
+              <mark v-if="part.matched">{{ part.text }}</mark>
+              <template v-else>{{ part.text }}</template>
+            </template>
+          </span>
         </li>
       </ul>
 
