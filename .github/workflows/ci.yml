@@ -94,7 +94,17 @@ jobs:
               git push "origin HEAD:${branch##*/}" 2>/dev/null || \
               echo "Skip push (no write permission or already on branch)"
           fi
-      - run: pnpm test:e2e
+      - run: pnpm test:e2e -u
+      - name: Commit updated snapshots
+        if: github.event_name == 'pull_request'
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(e2e): update visual snapshots"
+            git push "origin HEAD:${{ github.head_ref }}"
+          fi
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
