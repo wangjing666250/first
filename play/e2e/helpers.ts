@@ -17,3 +17,16 @@ export async function expectScreenshot(section: Locator, snapshotName: string): 
   await section.scrollIntoViewIfNeeded();
   await expect(section).toHaveScreenshot(snapshotName);
 }
+
+export async function expectScreenshotWithBootstrap(
+  section: Locator,
+  testInfo: { attach: (name: string, options: object) => Promise<void> },
+  snapshotName: string
+): Promise<void> {
+  await section.scrollIntoViewIfNeeded();
+  await expect(section).toHaveScreenshot(snapshotName);
+  await testInfo.attach('screenshot', {
+    body: await section.screenshot(),
+    contentType: 'image/png',
+  });
+}
